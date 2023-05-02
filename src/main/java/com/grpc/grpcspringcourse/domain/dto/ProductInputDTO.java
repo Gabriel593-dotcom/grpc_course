@@ -1,23 +1,25 @@
 package com.grpc.grpcspringcourse.domain.dto;
 
+import com.grpc.grpcspringcourse.domain.Product;
+
 public class ProductInputDTO {
 
   private final String name;
-  private final Double prince;
+  private final Double price;
   private final Integer quantityInStock;
 
-  public ProductInputDTO(String name, Double prince, Integer quantityInStock) {
-    this.name = name;
-    this.prince = prince;
-    this.quantityInStock = quantityInStock;
+  public ProductInputDTO(Product product) {
+    this.name = product.getName();
+    this.price = product.getPrice();
+    this.quantityInStock = product.getQuantityInStock();
   }
 
   public String getName() {
     return name;
   }
 
-  public Double getPrince() {
-    return prince;
+  public Double getPrice() {
+    return price;
   }
 
   public Integer getQuantityInStock() {

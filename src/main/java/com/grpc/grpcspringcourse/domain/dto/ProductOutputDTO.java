@@ -1,22 +1,19 @@
 package com.grpc.grpcspringcourse.domain.dto;
 
+import com.grpc.grpcspringcourse.domain.Product;
+
 public class ProductOutputDTO {
 
   private final Long id;
   private final String name;
-  private final Double prince;
+  private final Double price;
   private final Integer quantityInStock;
 
-  public ProductOutputDTO(
-    Long id,
-    String name,
-    Double prince,
-    Integer quantityInStock
-  ) {
-    this.id = id;
-    this.name = name;
-    this.prince = prince;
-    this.quantityInStock = quantityInStock;
+  public ProductOutputDTO(Product product) {
+    this.id = product.getId();
+    this.name = product.getName();
+    this.price = product.getPrice();
+    this.quantityInStock = product.getQuantityInStock();
   }
 
   public Long getId() {
@@ -27,8 +24,8 @@ public class ProductOutputDTO {
     return name;
   }
 
-  public Double getPrince() {
-    return prince;
+  public Double getPrice() {
+    return price;
   }
 
   public Integer getQuantityInStock() {
